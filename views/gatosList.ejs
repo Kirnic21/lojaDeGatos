@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="/gato/gatosCreate">Adicionar Gatos</a>
+    <ul>
+      <% if (gatos && gatos.length) { %>  <!-- Ensure gatos exists and has items -->
+        <% gatos.forEach((gato) => { %>
+          <li>
+                
+            <a href="/gato/<%=gato.id%>/gatosUpdate">editar</a>
+            <h3> <%= gato.gato%></h3>
+            <h4> <%= gato.peso%></h4>
+            <h4> <%= gato.raca%></h4>
+          </li>
+        <% }) %>
+      <% } else { %>
+        <li>No gatos found</li>
+      <% } %>
+    </ul>
+</body>
+</html>
